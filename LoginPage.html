@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color: #A9A9A9">
+    <div class="container">
+        <div class="header text-center">
+            <h1>Login Page</h1>
+        </div>
+        <form name="login" onsubmit="return validateForm() ;" method="POST">
+            <div class="form-group col-xs-12" center>
+                <label for="Username">Username:</label>
+                <input class="form-control" type="text" name="username" placeholder="Enter Username" maxlength="20" required/>
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="Password">Password:</label>
+                <input class="form-control" type="password" name="password" placeholder="Enter Password" maxlength="20" required/>
+            </div>
+            <div class="btn">
+                <button type="submit" class="btn btn-default" name="submit" onclick="validate()">Submit</button>
+                <button type="reset" class="btn btn-default" name="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        var count = 2;
+
+        function validate() {
+            var un = document.login.username.value;
+            var pw = document.login.password.value;
+            var valid = false;
+            var usernameArray = ["CustomerTester", "OperatorTester", "Admin"];
+            var passwordArray = ["customer", "operator", "admin"];
+            for (var i = 0; i < usernameArray.length; i++) {
+                if ((un == usernameArray[i]) && (pw == passwordArray[i])) {
+                    valid = true;
+                    break;
+                }
+            }
+            if (valid) {
+                alert("Login was successful");
+                window.location = "index.html";
+                return false;
+            }
+            var again = "tries";
+            if (count == 1) {
+                again = "try"
+            }
+            if (count >= 1) {
+                alert("Wrong username or password")
+                count--;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
