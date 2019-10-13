@@ -6,37 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login Page</title>
+    <link type="text/css" rel="stylesheet" href="style.css" />
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="Script/script.js"></script>
+
 </head>
 
 <body style="background-color: #A9A9A9">
     <div class="container">
-        <div class="header text-center">
+        <div class="col text-center">
             <h1>Login Page</h1>
         </div>
         <form name="login" onsubmit="return validateForm() ;" method="POST">
-            <div class="form-group col-xs-12" center>
+            <div class="form-group col-xs-12">
                 <label for="Username">Username:</label>
-                <input class="form-control" type="text" name="username" placeholder="Enter Username" maxlength="20" required/>
+                <input class="form-control" type="text" name="username" placeholder="Enter Username" maxlength="20" required autofocus/>
             </div>
             <div class="form-group col-xs-12">
                 <label for="Password">Password:</label>
-                <input class="form-control" type="password" name="password" placeholder="Enter Password" maxlength="20" required/>
+                <input class="form-control" type="password" name="password" placeholder="Enter Password" maxlength="20" required />
             </div>
             <div class="btn">
-                <button type="submit" class="btn btn-default" name="submit" onclick="validate()">Submit</button>
-                <button type="reset" class="btn btn-default" name="reset">Reset</button>
+                <button type="submit" class="btn btn-dark" name="submit" onclick="validate()">Submit</button>
+                <button type="reset" class="btn btn-dark" name="reset">Reset</button>
             </div>
         </form>
     </div>
-
+    <!-- 
     <script>
         var count = 2;
 
@@ -55,18 +62,21 @@
             if (valid) {
                 alert("Login was successful");
                 window.location = "index.html";
-                return false;
+                return true;
+            } else {
+                alert("Wrong username or password");
+                windows.location.reload(true);
             }
-            var again = "tries";
-            if (count == 1) {
-                again = "try"
-            }
-            if (count >= 1) {
-                alert("Wrong username or password")
-                count--;
-            }
+            // var again = "tries";
+            // if (count == 1) {
+            //     again = "try"
+            // }
+            // if (count >= 1) {
+            //     alert("Wrong username or password")
+            //     count--;
+            // }
         }
-    </script>
+    </script> -->
 
 </body>
 
