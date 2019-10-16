@@ -12,39 +12,40 @@
 </head>
 
 <body>
-    <form action="index.html" class="login-form">
+    <form id="form" action="index.html" class="login-form">
         <h1>Login</h1>
 
         <div class="inputb">
-            <input type=text>
+            <input type="text" id="username">
             <span data-placeholder="Username"></span>
         </div>
 
         <div class="inputb">
-            <input type="password">
+            <input type="password" id="password">
             <span data-placeholder="Password"></span>
         </div>
-        <input type="submit" class="logbtn" value="Login">
+        <input type="submit" class="logbtn" value="Sign in">
 
     </form>
 
     <script type="text/javascript">
-        $(".inputb").on("focus", function() {
+        $(".inputb input").on("focus", function() {
             $(this).addClass("focus");
         });
 
-        $(".inputb").on("blur", function() {
+        $(".inputb input").on("blur", function() {
             if ($(this).val() == "")
-                $(this).addClass("focus");
+                $(this).removeClass("focus");
         });
     </script>
-    <!-- 
+
     <script>
         var count = 2;
 
         function validate() {
-            var un = document.login.username.value;
-            var pw = document.login.password.value;
+            var un = $('#username').val();
+            var pw = $('#password').val();
+
             var valid = false;
             var usernameArray = ["CustomerTester", "OperatorTester", "Admin"];
             var passwordArray = ["customer", "operator", "admin"];
@@ -62,16 +63,14 @@
                 alert("Wrong username or password");
                 windows.location.reload(true);
             }
-            // var again = "tries";
-            // if (count == 1) {
-            //     again = "try"
-            // }
-            // if (count >= 1) {
-            //     alert("Wrong username or password")
-            //     count--;
-            // }
         }
-    </script> -->
+
+        $('#form').submit(e => {
+            e.preventDefault();
+
+            validate();
+        })
+    </script>
 
 </body>
 
