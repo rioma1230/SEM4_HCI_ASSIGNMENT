@@ -1,0 +1,21 @@
+#body {
+    padding-left: 30px;
+    color: white;
+    background-image: linear-gradient(90deg, #000000, #434343);
+    overflow: auto;
+}
+
+.table {
+    color: black;
+    background-color: white;
+}
+
+.table tbody tr:hover td,
+.table tbody tr:hover th {
+    background-color: inherit !important;
+}
+
+.table-disable-hover.table-striped tbody tr:nth-child(odd):hover td,
+.table-disable-hover.table-striped tbody tr:nth-child(odd):hover th {
+    background-color: #f9f9f9;
+}

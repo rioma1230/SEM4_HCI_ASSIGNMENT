@@ -45,24 +45,30 @@
         function validate() {
             var un = $('#username').val();
             var pw = $('#password').val();
-
             var valid = false;
-            var usernameArray = ["CustomerTester", "OperatorTester", "Admin"];
-            var passwordArray = ["customer", "operator", "admin"];
-            for (var i = 0; i < usernameArray.length; i++) {
-                if ((un == usernameArray[i]) && (pw == passwordArray[i])) {
-                    valid = true;
-                    break;
+
+            $.getJSON('/data/users.json', function(data) {
+                $.each(data, function(i, obj) {
+                    if (obj.username == un && obj.password == pw) {
+                        valid = true;
+                        return false;
+                    }
+                    console.log(valid);
+                });
+
+                if (valid == true) {
+                    alert("login correct");
+                    if (un == "admin" && pw == "admin") {
+                        window.location.assign("adminIndex.html");
+                    } else if (un == "operator" && pw == "password") {
+                        window.location.assign("operatorIndex.html");
+                    } else if (un == "normaluser" && pw == "password") {
+                        window.location.assign("normalIndex.html");
+                    }
+                } else {
+                    alert("Wrong username or password");
                 }
-            }
-            if (valid) {
-                alert("Login was successful");
-                window.location = "index.html";
-                return true;
-            } else {
-                alert("Wrong username or password");
-                windows.location.reload(true);
-            }
+            });
         }
 
         $('#form').submit(e => {
