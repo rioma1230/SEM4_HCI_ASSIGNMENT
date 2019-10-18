@@ -21,37 +21,41 @@
 </head>
 
 <body id="body">
-    <h1>Restaurant Information</h1>
+    <h1 class="text-center text-white ">Restaurant Information</h1>
 
     <form method="POST">
         <div class="container-fluid mt-5">
             <div class="row">
                 <div class="col ml-4">
                     <div class="form-group ">
-                        <label for="InputRestaurantName">Restaurant Name</label>
+                        <label for="InputRestaurantName" class="text-white">Restaurant Name</label>
                         <input type="text" class="form-control w-50" id="InputRestaurantName" placeholder="Enter Name">
                     </div>
                     <div class="form-group">
-                        <label for="InputRestaurantPhone">Restaurant Phone Number</label>
+                        <label for="InputRestaurantPhone" class="text-white">Restaurant Phone Number</label>
                         <input type="tel" class="form-control w-50" id="InputRestaurantPhone" placeholder="Enter Phone Number">
                     </div>
                     <div class="form-group">
-                        <label for="InputRestaurantEmail">Restaurant E-mail</label>
+                        <label for="InputRestaurantEmail" class="text-white">Restaurant E-mail</label>
                         <input type="email" class="form-control w-50" id="InputRestaurantEmail" placeholder="Enter E-mail">
                     </div>
                 </div>
                 <div class="col ml-4">
                     <div class="form-group">
-                        <label for="InputBranches"></label>
+                        <label for="InputBranches" class="text-white">Branches Information</label>
+                        <div>
+                            <button class="btn btn-outline-dark btn-lg bg-light text-black" onclick="popup()">Click to Input</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </form>
-
-
-
-    </div>
 </body>
+<script>
+    function popup() {
+
+    }
+</script>
 
 </html>

@@ -1,0 +1,67 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Request JSON Test</title>
+</head>
+
+<body>
+    <div class="container" style="padding:50px 250px;">
+        <form role="form">
+            <div class="form-group">
+                <div class="search-bar">
+                    <input type="text" id="seeker">
+                </div>
+                <div id="content"></div>
+            </div>
+        </form>
+        <div id="filter-records"></div>
+    </div>
+</body>
+<script>
+    var data = [{
+        "id": 198,
+        "name": "Aaron Garo",
+    }, {
+        "id": 345,
+        "name": "Michael Stines",
+    }, {
+        "id": 545,
+        "name": "Ully Heiz",
+    }, {
+        "id": 678,
+        "name": "Asgaf Torino",
+    }]
+
+    output = "";
+    $.each(data, function(key, val) {
+        output += "<div class='values'>";
+        output += '<h5 class="value-id">' + val.id + '</h5>';
+        output += '<p class="value-name">' + val.name + '</p>'
+        output += "</div>";
+    });
+
+    $('#content').html(output);
+
+    /* SEEKER FUNCTION */
+    if (!RegExp.escape) {
+        RegExp.escape = function(s) {
+            return s.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&")
+        };
+    }
+
+    jQuery(function() {
+        var $rows = $('.values');
+        $('#seeker').keyup(function() {
+            var regex = new RegExp(RegExp.escape($.trim(this.value).replace(/\s+/g, ' ')), 'i')
+            $rows.hide().filter(function() {
+                var text = $(this).children(".value-name").text().replace(/\s+/g, ' ');
+                return regex.test(text)
+            }).show();
+        });
+    });
+</script>
+
+</html>

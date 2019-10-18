@@ -35,12 +35,12 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link text-dark font-italic bg-secondary" onclick="setURL()">
+                <a href="#" class="nav-link text-dark font-italic bg-secondary" onclick="setURLSU()">
                     <i class="fa fa-th-large mr-3 text-primary fa-fw"></i> Show existing users
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link text-dark font-italic">
+                <a href="#" class="nav-link text-dark font-italic bg-secondary" onclick="setURLCND()">
                     <i class="fa fa-address-card mr-3 text-primary fa-fw"></i> Create and delete users
                 </a>
             </li>
@@ -62,8 +62,11 @@
     <!-- Page content holder -->
     <div class="page-content p-5 active" id="content">
         <!-- Toggle button -->
-        <button id="" type="button" class="sidebarCollapse btn btn-outline-light rounded-pill shadow-sm px-4 mb-4 d-none d-lg-inline-block"><i
+
+        <button type="button" class="sidebarCollapse btn btn-outline-light rounded-pill shadow-sm px-4 mb-4 d-none d-lg-inline-block"><i
                 class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
+        <button type="button" class="btn btn-outline-dark bg-secondary btn-circle bg-white rounded-pill float-right" onclick="window.location.href='index.html'">Logout
+                    </button>
         <div class="navbar-light">
             <span class="navbar-toggler-icon sidebarCollapse d-inline-block d-lg-none text-light bg-white btn-lg"></span>
         </div>
@@ -87,7 +90,7 @@
             document.getElementById('iframe').src = "welcome.html";
         }
 
-        function setURL() {
+        function setURLSU() {
             document.getElementById("header").style.display = "none";
             document.getElementById("line").style.display = "none";
             window.scrollTo({
@@ -96,6 +99,17 @@
             });
             $('#sidebar, #content').toggleClass('active');
             document.getElementById('iframe').src = "showUsers.html";
+        }
+
+        function setURLCND() {
+            document.getElementById("header").style.display = "none";
+            document.getElementById("line").style.display = "none";
+            window.scrollTo({
+                top: 100,
+                behavior: 'smooth'
+            });
+            $('#sidebar, #content').toggleClass('active');
+            document.getElementById('iframe').src = "CnDUser.html";
         }
     </script>
 </body>
