@@ -1,9 +1,7 @@
 [{
         "name": "FOOD",
-        "dishes": [{
-            "name": "FOOD",
-            "price": 15.5
-        }],
+        "dname": "FOOD",
+        "price": 15.5,
         "is_enabled": true,
         "is_special": true,
         "from": "2012-04-21T18:25:43-05:00",
@@ -11,10 +9,10 @@
     },
     {
         "name": "SomethingGoodeat",
-        "dishes": [{
-            "name": "GOOD",
-            "price": 3000
-        }],
+
+        "dname": "GOOD",
+        "price": 3000,
+
         "is_enable": true,
         "is_special": true,
         "from": "2019-04-21T18:25:43-05:00",
@@ -22,10 +20,10 @@
     },
     {
         "name": "FOOD1",
-        "dishes": [{
-            "name": "GOOD",
-            "price": 3000
-        }],
+
+        "dname": "GOOD",
+        "price": 3000,
+
         "is_enable": true,
         "is_special": true,
         "from": "2012-04-21T18:25:43-05:00",
@@ -33,12 +31,9 @@
     },
     {
         "name": "FOOD2",
-        "dishes": [{
-                "name": "GOOD",
-                "price": 3000
-            }
 
-        ],
+        "dname": "GOOD",
+        "price": 3000,
 
         "is_enable": true,
         "is_special": true,
@@ -47,10 +42,10 @@
     },
     {
         "name": "FOOD3",
-        "dishes": [{
-            "name": "GOOD",
-            "price": 3000
-        }],
+
+        "dname": "GOOD",
+        "price": 3000,
+
         "is_enable": true,
         "is_special": true,
         "from": "2012-04-21T18:25:43-05:00",
