@@ -6,28 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="css/welcomeStyle.css">
-
+    <link rel="stylesheet" href="css/showUser.css">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
 </head>
 
-<body>
-    <div class="header">Hide or Show Menu</div>
-    <div class="row">
-        <div class="col">
-            <span></span>
+<body id="body">
+    <div class="container">
+        <div class="table-responsive text-white">
+            <h1 class="text-white">Remove Menu</h1>
+            <br/>
+            <table id="table" class="table">
+                <thead class="thead">
+                    <tr>
+                        <th data-field="name">Menu Name</th>
+                        <th data-field="dname">Dishes Name</th>
+                        <th data-field="price">Price</th>
+                    </tr>
+                </thead>
+            </table>
         </div>
+        <br>
+        <input type="button" class="btn pb-2" onclick="removeMenu()" value="Remove Menu">
+
     </div>
+
 </body>
+<script src="js/updateMenu.js"></script>
+<script>
+    function removeMenu() {
+        rn = window.prompt("Input the Row number(1-5) which you want to remove", "0");
+        document.getElementById("table").deleteRow(rn);
+    }
+</script>
 
 </html>

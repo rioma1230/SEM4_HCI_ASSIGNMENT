@@ -21,100 +21,105 @@
 </head>
 
 <body id="body">
-    <h1 class="text-center text-white ">Restaurant Information</h1>
+    <div class="container">
+        <h1 class=" text-white ">Restaurant Information</h1>
 
-    <form id="form" method="POST">
-        <div class="container-fluid mt-5">
-            <div class="row">
-                <div class="col ml-4">
-                    <div class="form-group ">
-                        <label for="InputRestaurantName" class="text-white">Restaurant Name</label>
-                        <input type="text" class="form-control w-50" id="InputRestaurantName" placeholder="Enter Name">
+        <form id="form" method="POST">
+            <div class="container-fluid mt-5">
+                <div class="row">
+                    <div class="col ml-4">
+                        <div class="form-group ">
+                            <label for="InputRestaurantName" class="text-white">Restaurant Name</label>
+                            <input type="text" class="form-control w-50" id="InputRestaurantName" placeholder="Enter Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="InputRestaurantPhone" class="text-white">Restaurant Phone Number</label>
+                            <input type="tel" class="form-control w-50" id="InputRestaurantPhone" placeholder="Enter Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <label for="InputRestaurantEmail" class="text-white">Restaurant E-mail</label>
+                            <input type="email" class="form-control w-50" id="InputRestaurantEmail" placeholder="Enter E-mail">
+                        </div>
+                        <div class="form-group">
+                            <label for="Submit"></label>
+                            <input type="submit" name="submit" id="submit" class="form-control w-50" onclick="restInfo()">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="InputRestaurantPhone" class="text-white">Restaurant Phone Number</label>
-                        <input type="tel" class="form-control w-50" id="InputRestaurantPhone" placeholder="Enter Phone Number">
-                    </div>
-                    <div class="form-group">
-                        <label for="InputRestaurantEmail" class="text-white">Restaurant E-mail</label>
-                        <input type="email" class="form-control w-50" id="InputRestaurantEmail" placeholder="Enter E-mail">
-                    </div>
-                    <div class="form-group">
-                        <label for="Submit"></label>
-                        <input type="submit" name="submit" id="submit" class="form-control w-50" onclick="restInfo()">
-                    </div>
-                </div>
-                <div class="col ml-4">
-                    <div class="form-group">
-                        <label for="InputBranches" class="text-white">Branches Information</label>
-                        <div>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-outline-dark btn-lg bg-light text-black" data-toggle="modal" data-target="#modelId">
-                              Click to Input
+                    <div class="col ml-4">
+                        <div class="form-group">
+                            <label for="InputBranches" class="text-white">Branches Information</label>
+                            <div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-dark btn-lg bg-light text-black" data-toggle="modal" data-target="#modelId">
+                                Click to Input
                             </button>
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Input Branch information</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div>
-                                                <label for="form-name">Enter Branch Name</label>
-                                                <input type="text" id="inputName" class="form-control" name="branchName" placeholder="Name">
+                                <!-- Modal -->
+                                <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Input Branch information</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
                                             </div>
-                                            <div>
-                                                <label for="form-location">Select Branch Location</label>
+                                            <div class="modal-body">
+                                                <div>
+                                                    <label for="form-name">Enter Branch Name</label>
+                                                    <input type="text" id="inputName" class="form-control" name="branchName" placeholder="Name">
+                                                </div>
+                                                <div>
+                                                    <label for="form-location">Select Branch Location</label>
+                                                </div>
+                                                <div>
+                                                    <select id="city" name="city"></select>
+                                                    <p><small>City</small></p>
+                                                    <select id="area" name="area"></select>
+                                                    <p><small>Area</small></p>
+                                                    <textarea class="form-control" row="2" id="detailLocation"></textarea>
+                                                    <p><small>Detail Location</small></p>
+                                                </div>
                                             </div>
-                                            <div>
-                                                <select id="city" name="city"></select>
-                                                <p><small>City</small></p>
-                                                <select id="area" name="area"></select>
-                                                <p><small>Area</small></p>
-                                                <textarea class="form-control" row="2" id="detailLocation"></textarea>
-                                                <p><small>Detail Location</small></p>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary" onclick="appendToRow()" data-dismiss="modal">Save</button>
                                             </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" onclick="appendToRow()" data-dismiss="modal">Save</button>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <table class="table text-light" id="rowToBeAdded" style="display: none">
-                                <tr>
-                                    <th>Branch Name</th>
-                                    <th>City</th>
-                                    <th>Area</th>
-                                    <th>Detail Location</th>
-                                </tr>
-                            </table>
+                                <table class="table text-light" id="rowToBeAdded" style="display: none" border="1">
+                                    <tr>
+                                        <th>Branch Name</th>
+                                        <th>City</th>
+                                        <th>Area</th>
+                                        <th>Detail Location</th>
+                                    </tr>
+                                </table>
 
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <table class="table text-light" id="restInfo" style="display: none">
-                    <tr>
-                        <th>Restaurant Name</th>
-                        <th>Restaurant Phone Number</th>
-                        <th>Restaurant E-mail</th>
+                    <table class="table text-light" id="restInfo" style="display: none" border="1">
+                        <tr>
+                            <th>Restaurant Name</th>
+                            <th>Restaurant Phone Number</th>
+                            <th>Restaurant E-mail</th>
+                        </tr>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </body>
+<script src="js/inputBranch.js"></script>
 <script>
     $("#form").submit(e => {
         e.preventDefault();
 
         if (e.currentTarget.reportValidity()) {
-            if (!!$('#InputRestaurantName').val() && !!$('#InputRestaurantPhone').val() && !!$('#InputRestaurantEmail').val()) {
+            if (!!$('#InputRestaurantName').val() && !!$('#InputRestaurantPhone').val() && !!$(
+                    '#InputRestaurantEmail').val()) {
                 $('#restInfo').css('display', 'block');
                 $('#restInfo').append(`
                         <tr>
@@ -124,15 +129,15 @@
                         </tr>
                 `);
             } else {
-                alert('Null Input!');
+                alert('Null Restaurant Input!');
             }
         }
     })
 </script>
-<script src="js/inputBranch.js"></script>
 <script>
     let appendToRow = () => {
-        if (!!$('#inputName').val() && !!$('#city>option:selected').text() && !!$('#area>option:selected').text() && !!$('#detailLocation').val()) {
+        if (!!$('#inputName').val() && !!$('#city>option:selected').text() && !!$('#area>option:selected').text() &&
+            !!$('#detailLocation').val()) {
             $('#rowToBeAdded').css('display', 'block');
             $('#rowToBeAdded').append(`
                 <tr>
@@ -143,13 +148,10 @@
                 </tr>
             `);
         } else {
-            alert('Null Input!');
+            alert('Null Branch Input!');
         }
 
     }
-</script>
-<script>
-    let restInfo = () => {}
 </script>
 
 </html>
