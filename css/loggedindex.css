@@ -73,3 +73,15 @@ body {
 .text-gray {
     color: #aaa;
 }
+
+textarea {
+    resize: none;
+}
+
+form {
+    color: white;
+}
+
+p {
+    color: white;
+}

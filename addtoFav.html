@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/restInput.css">
+    <link href="//s.w.org/wp-includes/css/dashicons.css?20150710" rel="stylesheet" type="text/css">
+    <script src="js/findrestaurant.js"></script>
+</head>
+
+
+<body id="body">
+    <div class="container mt-2">
+        <form role="form">
+            <div class="form-group">
+                <div class="container">
+                    <div class="table-responsive">
+                        <h1 class="display-3">Add restaurant to Favorite</h1>
+                        <br/>
+                        <div class="search-bar">
+                            <input type="text" id="seeker">
+                        </div>
+                        <br>
+                        <table id="jsonTable" style="display:none">
+                            <thead>
+                                <tr>
+                                    <th>Restaurant ID</th>
+                                    <th>Restaurant Name</th>
+                                    <th>Like</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="button" value="Load All Menu" id="Render JSON" onclick="loadJson();" />
+                </div>
+            </div>
+        </form>
+        <div class="form-group">
+            Enter Restaurant Name: <input type="text" id="restname">
+            <input type="submit" value="Add to favorite" onclick="addtofav()">
+        </div>
+        <div id="filter-records"></div>
+    </div>
+
+
+</body>
+
+
+<script src="js/findrestaurant.js"></script>
+
+<script>
+    function loadJson() {
+        document.getElementById("jsonTable").style.display = "block";
+    }
+</script>
+
+<script>
+    function addtofav() {
+        alert("Restaurant has been added to favorite.");
+    }
+</script>
+
+</html>

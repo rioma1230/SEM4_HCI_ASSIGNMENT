@@ -69,6 +69,9 @@ $.each(data, function(key, val) {
     var tdPrice = document.createElement("td");
     tdPrice.innerHTML = val.dishes.price;
 
+    var like = document.createElement("td");
+    like.innerHTML = '<div class="fav-btn"><span href="" class="favme dashicons dashicons-heart"></span></div>';
+
     tr.append(tdName);
     tr.append(tdDname);
     tr.append(tdPrice);
@@ -76,7 +79,8 @@ $.each(data, function(key, val) {
 
 });
 
-/* SEEKER FUNCTION */
+$('#filter-records').html(output);
+
 if (!RegExp.escape) {
     RegExp.escape = function(s) {
         return s.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&");

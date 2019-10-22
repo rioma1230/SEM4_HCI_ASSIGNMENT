@@ -45,13 +45,23 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link text-dark font-italic">
+                <a href="#" class="nav-link text-dark font-italic bg-secondary" onclick="setURL_LaC()">
                     <i class="fa fa-cubes mr-3 text-primary fa-fw"></i> Leave Comment to a Restaurant
                 </a>
             </li>
             <li class="nav-item ">
-                <a href="# " class="nav-link text-dark font-italic ">
+                <a href="# " class="nav-link text-dark font-italic bg-secondary" onclick="setURL_AtF()">
+                    <i class="fa fa-picture-o mr-3 text-primary fa-fw "></i> Add to favourite
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a href="# " class="nav-link text-dark font-italic bg-secondary">
                     <i class="fa fa-picture-o mr-3 text-primary fa-fw "></i> Edit personal detail
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="# " class="nav-link text-dark font-italic bg-secondary" onclick="window.location.href = 'index.html'">
+                    <i class="fa fa-picture-o mr-3 text-primary fa-fw "></i> Sign out
                 </a>
             </li>
         </ul>
@@ -70,7 +80,7 @@
         </div>
 
         <!-- Demo content -->
-        <h2 class="display-4 text-white " id="header ">Welcome Operator</h2>
+        <h2 class="display-4 text-white " id="header ">Welcome Customer</h2>
         <div class="separator " id="line "></div>
         <div class="row text-white ">
             <div class="col-lg-12 ">
@@ -107,7 +117,27 @@
                 behavior: 'smooth'
             });
             $('#sidebar, #content').toggleClass('active');
-            document.getElementById('iframe').src = "hideOrShow.html";
+            document.getElementById('iframe').src = "findRestaurant.html";
+        }
+        function setURL_LaC(){
+            document.getElementById("header ").style.display = "none ";
+            document.getElementById("line ").style.display = "none ";
+            window.scrollTo({
+                top: 100,
+                behavior: 'smooth'
+            });
+            $('#sidebar, #content').toggleClass('active');
+            document.getElementById('iframe').src = "leaveAComment.html";
+        }
+        function setURL_AtF(){
+            document.getElementById("header ").style.display = "none ";
+            document.getElementById("line ").style.display = "none ";
+            window.scrollTo({
+                top: 100,
+                behavior: 'smooth'
+            });
+            $('#sidebar, #content').toggleClass('active');
+            document.getElementById('iframe').src = "addtoFav.html";
         }
     </script>
 </body>

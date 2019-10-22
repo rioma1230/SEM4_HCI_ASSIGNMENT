@@ -23,7 +23,7 @@
 <body id="body">
     <h1 class="text-center text-white ">Restaurant Information</h1>
 
-    <form method="POST">
+    <form id="form" method="POST">
         <div class="container-fluid mt-5">
             <div class="row">
                 <div class="col ml-4">
@@ -39,18 +39,117 @@
                         <label for="InputRestaurantEmail" class="text-white">Restaurant E-mail</label>
                         <input type="email" class="form-control w-50" id="InputRestaurantEmail" placeholder="Enter E-mail">
                     </div>
+                    <div class="form-group">
+                        <label for="Submit"></label>
+                        <input type="submit" name="submit" id="submit" class="form-control w-50" onclick="restInfo()">
+                    </div>
                 </div>
                 <div class="col ml-4">
                     <div class="form-group">
                         <label for="InputBranches" class="text-white">Branches Information</label>
                         <div>
-                            <button class="btn btn-outline-dark btn-lg bg-light text-black">Click to Input</button>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-dark btn-lg bg-light text-black" data-toggle="modal" data-target="#modelId">
+                              Click to Input
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Input Branch information</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div>
+                                                <label for="form-name">Enter Branch Name</label>
+                                                <input type="text" id="inputName" class="form-control" name="branchName" placeholder="Name">
+                                            </div>
+                                            <div>
+                                                <label for="form-location">Select Branch Location</label>
+                                            </div>
+                                            <div>
+                                                <select id="city" name="city"></select>
+                                                <p><small>City</small></p>
+                                                <select id="area" name="area"></select>
+                                                <p><small>Area</small></p>
+                                                <textarea class="form-control" row="2" id="detailLocation"></textarea>
+                                                <p><small>Detail Location</small></p>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary" onclick="appendToRow()" data-dismiss="modal">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table text-light" id="rowToBeAdded" style="display: none">
+                                <tr>
+                                    <th>Branch Name</th>
+                                    <th>City</th>
+                                    <th>Area</th>
+                                    <th>Detail Location</th>
+                                </tr>
+                            </table>
+
                         </div>
                     </div>
                 </div>
+
+                <table class="table text-light" id="restInfo" style="display: none">
+                    <tr>
+                        <th>Restaurant Name</th>
+                        <th>Restaurant Phone Number</th>
+                        <th>Restaurant E-mail</th>
             </div>
         </div>
     </form>
 </body>
+<script>
+    $("#form").submit(e => {
+        e.preventDefault();
+
+        if (e.currentTarget.reportValidity()) {
+            if (!!$('#InputRestaurantName').val() && !!$('#InputRestaurantPhone').val() && !!$('#InputRestaurantEmail').val()) {
+                $('#restInfo').css('display', 'block');
+                $('#restInfo').append(`
+                        <tr>
+                            <td>${$('#InputRestaurantName').val()}</td>
+                            <td>${$('#InputRestaurantPhone').val()}</td>
+                            <td>${$('#InputRestaurantEmail').val()}</td>
+                        </tr>
+                `);
+            } else {
+                alert('Null Input!');
+            }
+        }
+    })
+</script>
+<script src="js/inputBranch.js"></script>
+<script>
+    let appendToRow = () => {
+        if (!!$('#inputName').val() && !!$('#city>option:selected').text() && !!$('#area>option:selected').text() && !!$('#detailLocation').val()) {
+            $('#rowToBeAdded').css('display', 'block');
+            $('#rowToBeAdded').append(`
+                <tr>
+                    <td>${$('#inputName').val()}</td>
+                    <td>${$('#city>option:selected').text()}</td>
+                    <td>${$('#area>option:selected').text()}</td>
+                    <td>${$('#detailLocation').val()}</td>
+                </tr>
+            `);
+        } else {
+            alert('Null Input!');
+        }
+
+    }
+</script>
+<script>
+    let restInfo = () => {}
+</script>
 
 </html>
