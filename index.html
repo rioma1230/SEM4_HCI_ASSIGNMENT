@@ -1,67 +1,83 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Index</title>
-    <link type="text/css" rel="stylesheet" href="./css/indexstyle.css">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="js/pace.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-bez@1.0.11/src/jquery.bez.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
 </head>
-
 <body>
-    <div class="header">
-        <h1>Welcome to Yummy Everywhere</h1>
-    </div>
+	<header></header>
 
-    <div class="button text-center" id="btn">
-        <button type="button" class="btn btn-outline-light btn-lg" onclick="window.location.href='LoginPage.html'"><span>Login</span></button>
-    </div>
-    <div id="preloader">
-        <div class="p">LOADING</div>
-    </div>
+	<div class="container d-flex vh-100">
+		<div class="row m-auto">
+			<div class="col pt-5">
+				<h1 class="display-1 text-center">Yummy Everywhere</h1>
 
+				<p class="pt-5">
+					Nisi et nulla velit fugiat quis non ex. Sit veniam amet cillum in Lorem id ipsum. Id nostrud tempor officia consequat incididunt ad pariatur nulla velit irure consequat est commodo est. Nostrud enim ea dolore do culpa labore ad eiusmod. Velit non reprehenderit in minim amet officia sint aute culpa irure mollit voluptate veniam. Nostrud do ea sint et id. Laborum incididunt do officia id aliqua officia.
+				</p>
 
+				<div class="row mt-5">
+					<div class="col-12 col-sm-6 col-lg-4">
+						<div class="card h-100">
+							<div class="card-body p-3 text-center">
+								<h1 class="display-4">Views</h1>
+								<p>
+									Voluptate irure sint consectetur cillum fugiat officia proident reprehenderit.
+								</p>
+								<p>
+									255,233
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-sm-6 col-lg-4">
+						<div class="card h-100">
+							<div class="card-body p-3 text-center">
+								<h1 class="display-4">Usage</h1>
+								<p>
+									Dolor nostrud id id irure eiusmod.
+								</p>
+								<p>
+									128,435
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-sm-6 col-lg-4">
+						<div class="card h-100">
+							<div class="card-body p-3 text-center">
+								<h1 class="display-4">Users</h1>
+								<p>
+									Exercitation commodo ut amet fugiat non et aliquip laboris commodo consectetur qui aute sunt.
+								</p>
+								<p>
+									55,233
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 
+				<button type="button" class="btn btn-outline-primary d-block mx-auto mt-5 btn-lg p-3 px-5">Get Started</button>
+			</div>
+		</div>
+	</div>
 
-    <script>
-        paceOptions = {
-            ajax: true,
-            document: true,
-            eventLag: false
-        };
-
-        Pace.on('done', function() {
-            $('.p').delay(500).animate({
-                top: '30%',
-                opacity: '0'
-            }, 3000, $.bez([0.19, 1, 0.22, 1]));
-
-
-            $('#preloader').delay(1500).animate({
-                top: '-100%'
-            }, 2000, $.bez([0.19, 1, 0.22, 1]));
-
-            TweenMax.from(".title", 2, {
-                delay: 1.8,
-                y: 10,
-                opacity: 0,
-                ease: Expo.easeInOut
-            })
-        });
-    </script>
-
+	<script>
+		$('header').load('/navbar.html');
+	</script>
 </body>
-
 </html>

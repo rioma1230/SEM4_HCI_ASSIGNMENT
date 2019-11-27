@@ -1,6 +1,6 @@
 [{
         "username": "admin",
-        "password": "admin",
+        "password": "password",
         "name": "admin",
         "datetime": "2012-04-21T18:25:43-05:00"
     },

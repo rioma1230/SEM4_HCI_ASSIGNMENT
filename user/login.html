@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<header></header>
+
+	<div class="container d-flex vh-100">
+		<div class="row m-auto">
+			<div class="col pt-5">
+				<h1 class="display-1">Login</h1>
+
+				<p>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero, quod? Impedit quo earum ipsam asperiores, quod repudiandae architecto itaque tenetur perspiciatis possimus facilis saepe consequuntur, maxime, numquam iusto a reiciendis?
+				</p>
+
+				<hr>
+
+				<form action="#">
+					<div class="form-group">
+						<label for="username">Username</label>
+						<input type="text" class="form-control" name="username" id="username" aria-describedby="helpId" placeholder="Et laboris dolore sunt pariatur amet ex." autofocus>
+						<small id="helpId" class="form-text text-muted">Eiusmod aliquip nulla est magna in ipsum exercitation.</small>
+					</div>
+
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="Fugiat cupidatat exercitation deserunt anim.">
+						<small id="helpId" class="form-text text-muted">Veniam nisi eu laboris anim dolor excepteur proident in pariatur.</small>
+					</div>
+
+					<div class="custom-control custom-switch">
+						<input type="checkbox" class="custom-control-input" id="customSwitch1">
+						<label class="custom-control-label" for="customSwitch1">Remember me</label>
+					</div>
+
+					<div class="row mt-4">
+						<div class="col">
+							<button type="button" class="btn btn-outline-primary btn-lg p-3 px-5 mr-3">Login</button>
+							<button type="button" class="btn btn-outline-danger btn-lg p-3 px-5">Reset</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$('header').load('/navbar.html');
+	</script>
+</body>
+
+</html>
