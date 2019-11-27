@@ -1,0 +1,37 @@
+[{
+        "id": 1,
+        "name": "Restaurant1",
+        "cuisine": 3,
+        "owner": 1,
+        "like": 8,
+        "favourite": 41,
+        "image_url": "https://images.pexels.com/photos/1833586/pexels-photo-1833586.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+        "id": 2,
+        "name": "Restaurant2",
+        "cuisine": 5,
+        "owner": 1,
+        "like": 65,
+        "favourite": 38,
+        "image_url": "https://images.pexels.com/photos/1833586/pexels-photo-1833586.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+        "id": 3,
+        "name": "Restaurant3",
+        "cuisine": 1,
+        "owner": 1,
+        "like": 100,
+        "favourite": 5,
+        "image_url": "https://images.pexels.com/photos/1833586/pexels-photo-1833586.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+        "id": 4,
+        "name": "Restaurant4",
+        "cuisine": 9,
+        "owner": 1,
+        "like": 15,
+        "favourite": 98,
+        "image_url": "https://images.pexels.com/photos/1833586/pexels-photo-1833586.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    }
+]

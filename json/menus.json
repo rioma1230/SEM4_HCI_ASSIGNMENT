@@ -1,7 +1,7 @@
 [{
         "name": "Menu1",
-        "is_enabled": true,
-        "is_special": false,
+        "enable": true,
+        "special": false,
         "dishes": [
             {
                 "name": "food 1",
@@ -13,8 +13,8 @@
     },
     {
         "name": "Menu2",
-        "is_enable": true,
-        "is_special": false,
+        "enable": true,
+        "special": false,
         "dishes": [
             {
                 "name": "food 1",
@@ -26,8 +26,8 @@
     },
     {
         "name": "Menu3",
-        "is_enable": true,
-        "is_special": false,
+        "enable": true,
+        "special": false,
         "dishes": [
             {
                 "name": "food 1",
@@ -39,8 +39,8 @@
     },
     {
         "name": "Menu4",
-        "is_enable": true,
-        "is_special": false,
+        "enable": true,
+        "special": false,
         "dishes": [
             {
                 "name": "food 1",
@@ -52,8 +52,8 @@
     },
     {
         "name": "Menu5",
-        "is_enable": true,
-        "is_special": false,
+        "enable": true,
+        "special": false,
         "dishes": [
             {
                 "name": "food 1",
