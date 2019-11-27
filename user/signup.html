@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<header></header>
+
+	<div class="container-fluid d-flex vh-100 p-0">
+		<div class="row m-auto h-100">
+			<div class="col-sm-6 col-lg-4 d-none d-sm-block p-0">
+				<img src="https://images.pexels.com/photos/2923591/pexels-photo-2923591.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-fluid h-100" alt="">
+			</div>
+			<div class="col pt-5 mt-5 px-5">
+				<h1 class="display-1">Sign up</h1>
+
+				<p>
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci veniam nobis aut deleniti sint molestias, expedita beatae enim cumque totam obcaecati ratione sit soluta praesentium modi sed aspernatur a optio!
+				</p>
+
+				<hr>
+
+				<form id="form" action="#">
+					<div class="row">
+						<div class="col-12 col-sm-6">
+							<div class="form-group">
+								<label for="username">Username</label>
+								<input type="text" class="form-control" name="username" id="username" aria-describedby="helpId" placeholder="Et laboris dolore sunt pariatur amet ex." autofocus required>
+								<small id="helpId" class="form-text text-muted">Eiusmod aliquip nulla est magna in ipsum exercitation.</small>
+							</div>
+
+							<div class="form-group">
+								<label for="password">Password</label>
+								<input type="password" class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="Fugiat cupidatat exercitation deserunt anim." required>
+								<small id="helpId" class="form-text text-muted">Veniam nisi eu laboris anim dolor excepteur proident in pariatur.</small>
+							</div>
+
+							<div class="form-group">
+								<label for="confirm">Confirm Password</label>
+								<input type="password" class="form-control" name="confirm" id="confirm" aria-describedby="helpId" placeholder="Excepteur incididunt sit dolore ad qui." required>
+								<small id="helpId" class="form-text text-muted">Amet aute aliqua est et velit culpa duis ipsum aliqua enim ex sint ullamco.</small>
+							</div>
+
+						</div>
+						<div class="col-12 col-sm-6 border-left">
+							<div class="form-group">
+								<label for="city">City</label>
+								<input type="text" class="form-control" name="city" id="city" aria-describedby="helpId" placeholder="Laborum culpa nulla est cupidatat deserunt amet nulla." required>
+								<small id="helpId" class="form-text text-muted">Officia ex veniam laborum qui qui tempor exercitation in.</small>
+							</div>
+
+							<div class="form-group">
+								<label for="area">Area</label>
+								<input type="text" class="form-control" name="area" id="area" aria-describedby="helpId" placeholder="Est fugiat voluptate veniam aliquip laborum minim duis." required>
+								<small id="helpId" class="form-text text-muted">Dolor deserunt tempor fugiat laboris Lorem esse cupidatat labore mollit eiusmod id nostrud exercitation.</small>
+							</div>
+
+							<div class="form-group">
+								<label for="address">Address</label>
+								<textarea class="form-control" name="address" id="address" rows="3" placeholder="Aute nulla duis sunt Lorem eu occaecat minim." required></textarea>
+							</div>
+						</div>
+					</div>
+
+					<div class="row mt-4">
+						<div class="col">
+							<button type="submit" class="btn btn-outline-primary btn-lg p-3 px-5 mr-3">Login</button>
+							<button type="reset" class="btn btn-outline-danger btn-lg p-3 px-5">Reset</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Dialog</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<span id="modal-content"></span>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$('header').load('/navbar.html');
+
+		$('#form').submit(function (e) {
+			e.preventDefault()
+
+			if ($('#password').val() === $('#confirm').val()) {
+				$('#modal-content').text('You have successfully created an account.')
+			} else {
+				$('#modal-content').text('The password and confirm password doesn\'t match.')
+			}
+
+			$('#modal').modal('toggle')
+		})
+	</script>
+</body>
+
+</html>
