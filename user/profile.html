@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<header></header>
+
+	<div class="container d-flex vh-100">
+		<div class="row m-auto">
+			<div class="col">
+				<div class="card">
+					<div class="row">
+						<div class="col p-3 pl-4">
+							<img class="card-img-top" src="https://cdn1.iconfinder.com/data/icons/business-users/512/circle-512.png" alt="">
+							<div class="card-body">
+								<h4 class="card-title"><span id="name"></span> (<span id="role"></span>)</h4>
+								<p class="card-text">
+									<small id="username"></small>
+								</p>
+							</div>
+						</div>
+
+						<div class="col border-left">
+							<h1 class="display-4">City</h1>
+
+							<p>Hong Kong Island 香港島</p>
+
+							<hr>
+
+							<h1 class="display-4">Area</h1>
+
+							<p>Eastern 東區</p>
+
+							<hr>
+
+							<h1 class="display-4">Address</h1>
+
+							<p>
+								Flat F15/F. Wah Lik Industrial Center 459-469 Castle Peak Road N. T. <br/>
+								Tsuen Wan District <br/>
+								Hong Kong
+							</p>
+
+							<hr>
+
+							<a href="./edit.html">
+								<button type="button" class="btn btn-outline-secondary p-3 px-5">Change password</button>
+							</a>
+
+							<button type="button" class="btn btn-outline-danger p-3 px-5 ml-3">Logout</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="module" src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.mjs"></script>
+	<script type="module">
+		import Cookies from 'https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.mjs';
+
+		function roleAbbreviationToFull(abbreviation) {
+			switch (abbreviation) {
+				case 'a': return 'Admin';
+				case 'o': return 'Operator';
+				case 'n': return 'Normal user';
+			}
+		}
+
+		$('header').load('/navbar.html')
+
+		$('#name').text(Cookies.get('name'))
+		$('#username').text('#' + Cookies.get('username'))
+		$('#role').text(roleAbbreviationToFull(Cookies.get('role')))
+	</script>
+</body>
+
+</html>
