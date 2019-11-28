@@ -109,6 +109,9 @@
 					$('#modal-text').text('You have successfully signed in.')
 
 					Cookies.set('role', user.role);
+					Cookies.set('name', user.name);
+					Cookies.set('username', user.username);
+					Cookies.set('password', user.password);
 				} else {
 					$('#modal-text').text('Wrong username or password. Please try again.')
 				}
