@@ -16,12 +16,20 @@
 				<a class="nav-link" href="/about.html">About us</a>
 			</li>
 		</ul>
-		<ul class="navbar-nav mt-2">
+		<ul id="guest-bar" class="navbar-nav mt-2">
 			<li class="nav-item">
 				<a class="nav-link" href="/user/login.html">Login</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="/user/signup.html">Sign up</a>
+			</li>
+		</ul>
+		<ul id="member-bar" class="navbar-nav mt-2">
+			<li class="nav-item">
+				<a class="nav-link" href="/user/profile.html">Welcome, user</a>
+			</li>
+			<li class="nav-item">
+				<a id="logout" class="nav-link" href="#">Logout</a>
 			</li>
 		</ul>
 	</div>
@@ -33,7 +41,15 @@
 <script type="module">
 	import Cookies from 'https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.mjs';
 
-	if (Cookies.get('role')) {
+	$('#logout').click(function () {
+		Cookies.set('role', undefined)
+
+		window.location.reload()
+	})
+
+	if (Cookies.get('role') != 'undefined') {
+		$('#guest-bar').remove();
+
 		switch (Cookies.get('role')) {
 			case "a":
 				$('#navbar-item-list').prepend(`
@@ -57,5 +73,7 @@
 				`);
 				break;
 		}
+	} else {
+		$('#member-bar').remove()
 	}
 </script>
