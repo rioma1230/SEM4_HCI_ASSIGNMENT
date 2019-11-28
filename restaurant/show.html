@@ -67,7 +67,7 @@
 
 				<div class="row">
 					<div class="col">
-						<a href="/menu/show.html">
+						<a id="should-login" href="/menu/show.html">
 							<button type="button" class="btn btn-outline-primary p-3 px-5 btn-lg mr-3">View Menus</button>
 						</a>
 						<a href="/branch/show.html">
@@ -171,8 +171,10 @@
 						</div>
 					</div>
 				`);
+			} else if (Cookies.get('role') !== 'n') {
+				$('#should-login').remove();
 			}
-		}
+		} 
 	</script>
 
 	<script>
