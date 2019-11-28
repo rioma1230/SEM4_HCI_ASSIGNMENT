@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+</head>
+<body>
+	<header></header>
+
+	<div class="container mt-5 pt-5">
+		<div class="row">
+			<div class="col">
+				<h1 class="display-1">Edit Menus</h1>
+
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. A in quasi doloremque suscipit facere, amet sunt officia quia ex cumque laborum qui animi? Perferendis magnam enim numquam dolorem impedit non.
+				</p>
+
+				<hr>
+
+				<a href="./new.html">
+					<button type="button" class="btn btn-outline-primary p-3 px-5 mb-3">Add Menu</button>
+				</a>
+
+				<table class="table text-center table-hover">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Enable</th>
+							<th>Special</th>
+							<th>From</th>
+							<th>To</th>
+						</tr>
+					</thead>
+					<tbody id="table-body"></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+				</div>
+				<div class="modal-body">
+					<button type="button" class="btn btn-outline-primary" data-dismiss="modal" onclick="window.location.assign('./edit.html')">Edit</button>
+					<button type="button" class="btn btn-outline-danger" data-dismiss="modal" onclick="$('#menu-'+selectedMenu).remove()">Remove</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$('header').load('/navbar.html')
+
+		var selectedMenu = -1
+
+		$.getJSON('/json/menus.json', function(menus) {
+			for (let i = 0; i < menus.length; i++){
+				$('#table-body').append(`
+					<tr id="menu-${i}" style="cursor: pointer" onclick="selectedMenu=${i}" data-toggle="modal" data-target="#modal">
+						<td>${menus[i].name}</td>
+						<td>${menus[i].enable}</td>
+						<td>${menus[i].special}</td>
+						<td>${menus[i].from}</td>
+						<td>${menus[i].to}</td>
+					</tr>
+				`)
+			}
+		})
+	</script>
+</body>
+</html>

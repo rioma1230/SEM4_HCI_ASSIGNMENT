@@ -2,18 +2,18 @@
         "username": "admin",
         "password": "password",
         "name": "admin",
-        "datetime": "2012-04-21T18:25:43-05:00"
+        "role": "a"
     },
     {
         "username": "operator",
         "password": "password",
         "name": "operator",
-        "datetime": "2012-04-21T18:25:43-05:00"
+        "role": "o"
     },
     {
-        "username": "normal",
+        "username": "normaluser",
         "password": "password",
         "name": "normal user",
-        "datetime": "2012-04-21T18:25:43-05:00"
+        "role": "n"
     }
 ]

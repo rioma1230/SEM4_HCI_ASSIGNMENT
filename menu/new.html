@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<header></header>
+
+	<div class="container-fluid vh-100 d-flex p-0">
+		<div class="row m-auto h-100">
+			<div class="col-6 col-lg-4 d-none d-sm-block p-0">
+				<img src="https://images.pexels.com/photos/5929/food-salad-dinner-eating.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="h-100 img-fluid" alt="">
+			</div>
+			<div class="col mt-5 p-5">
+				<h1 class="display-1">Add Menu</h1>
+
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quibusdam quia repellat, omnis aut, id debitis pariatur, sequi nobis quo alias reprehenderit officiis neque amet esse rem explicabo ea blanditiis!
+				</p>
+
+				<hr>
+
+				<div class="row">
+					<div class="col">
+						<div class="form-group">
+						  <label for="menu-name">Menu name</label>
+						  <input type="text" class="form-control" name="menu-name" id="menu-name" aria-describedby="helpId" placeholder="Id ipsum commodo elit enim sit minim qui occaecat occaecat deserunt.">
+						  <small id="helpId" class="form-text text-muted">Cupidatat aliqua nulla consectetur sit pariatur nostrud.</small>
+						</div>
+
+						<div class="custom-control custom-switch mb-3">
+						  <input type="checkbox" class="custom-control-input" id="customSwitch1">
+						  <label class="custom-control-label" for="customSwitch1">Enable</label>
+						</div>
+
+						<div class="custom-control custom-switch mb-3">
+						  <input type="checkbox" class="custom-control-input" id="customSwitch2">
+						  <label class="custom-control-label" for="customSwitch2">Special</label>
+						</div>
+
+						<div class="form-group">
+						  <label for="from">From</label>
+						  <input type="date" class="form-control" name="from" id="from" aria-describedby="helpId" placeholder="Laborum ad do ad esse consectetur cillum adipisicing.">
+						  <small id="helpId" class="form-text text-muted">Officia laborum aliquip labore aute magna reprehenderit occaecat aute proident sint laborum laborum duis ea.</small>
+						</div>
+
+						<div class="form-group">
+						  <label for="to">To</label>
+						  <input type="date" class="form-control" name="to" id="to" aria-describedby="helpId" placeholder="Exercitation eu in excepteur amet cillum Lorem.">
+						  <small id="helpId" class="form-text text-muted">Aliqua minim veniam consectetur minim anim minim ipsum aliqua laboris incididunt occaecat.</small>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-12 col-sm-6 border-right h-100">
+						<table class="table text-center">
+							<thead>
+								<tr>
+									<th>Dish name</th>
+									<th>Dish price</th>
+								</tr>
+							</thead>
+							<tbody id="table-body"></tbody>
+						</table>
+					</div>
+					<div class="col-12 col-sm-6 h-100">
+						<form id="form" action="#">
+							<div class="form-group">
+								<label for="name">Dish name</label>
+								<input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="Lorem id sit quis voluptate eiusmod fugiat nisi irure cillum dolore.">
+								<small id="helpId" class="form-text text-muted">Eiusmod commodo ex duis mollit eu dolore amet occaecat nulla consectetur aliqua nisi.</small>
+							</div>
+
+							<div class="form-group">
+								<label for="price">Dish price</label>
+								<input type="number" class="form-control" name="price" id="price" aria-describedby="helpId" placeholder="Consectetur proident dolor non sit ex reprehenderit.">
+								<small id="helpId" class="form-text text-muted">Labore nulla mollit esse ullamco laboris occaecat culpa magna magna id mollit ex.</small>
+							</div>
+
+							<button type="submit" class="btn btn-outline-primary p-3 px-5">Submit</button>
+
+							<button type="reset" class="btn btn-outline-danger p-3 px-5 ml-3">Reset</button>
+						</form>
+					</div>
+				</div>
+
+				
+				<button type="submit" class="btn btn-outline-primary p-3 px-5">Submit</button>
+
+				<button type="reset" class="btn btn-outline-danger p-3 px-5 ml-3">Reset</button>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$('header').load('/navbar.html');
+
+		$('#form').submit(function (e) {
+			e.preventDefault()
+
+			$('#table-body').append(`
+				<tr>
+					<td>${$('#name').val()}</td>
+					<td>$ ${parseInt($('#price').val()).toFixed(1)}</td>
+				</tr>
+			`)
+		})
+	</script>
+</body>
+
+</html>

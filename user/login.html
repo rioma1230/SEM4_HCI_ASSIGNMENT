@@ -36,16 +36,16 @@
 
 				<hr>
 
-				<form action="#">
+				<form id="form" action="#">
 					<div class="form-group">
 						<label for="username">Username</label>
-						<input type="text" class="form-control" name="username" id="username" aria-describedby="helpId" placeholder="Et laboris dolore sunt pariatur amet ex." autofocus>
+						<input type="text" class="form-control" name="username" id="username" aria-describedby="helpId" placeholder="Et laboris dolore sunt pariatur amet ex." autofocus required>
 						<small id="helpId" class="form-text text-muted">Eiusmod aliquip nulla est magna in ipsum exercitation.</small>
 					</div>
 
 					<div class="form-group">
 						<label for="password">Password</label>
-						<input type="password" class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="Fugiat cupidatat exercitation deserunt anim.">
+						<input type="password" class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="Fugiat cupidatat exercitation deserunt anim." required>
 						<small id="helpId" class="form-text text-muted">Veniam nisi eu laboris anim dolor excepteur proident in pariatur.</small>
 					</div>
 
@@ -56,8 +56,8 @@
 
 					<div class="row mt-4">
 						<div class="col">
-							<button type="button" class="btn btn-outline-primary btn-lg p-3 px-5 mr-3">Login</button>
-							<button type="button" class="btn btn-outline-danger btn-lg p-3 px-5">Reset</button>
+							<button type="submit" class="btn btn-outline-primary btn-lg p-3 px-5 mr-3">Login</button>
+							<button type="reset" class="btn btn-outline-danger btn-lg p-3 px-5">Reset</button>
 						</div>
 					</div>
 				</form>
@@ -65,8 +65,57 @@
 		</div>
 	</div>
 
-	<script>
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Login Dialog</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<span id="modal-text"></span>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="module" src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.mjs"></script>
+	<script type="module">
+		import Cookies from 'https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.mjs';
+
 		$('header').load('/navbar.html');
+		
+		$('#form').submit(function (e) {
+			e.preventDefault()
+
+			$.getJSON('/json/users.json', function (users) {
+				let username = $('#username').val();
+				let password = $('#password').val();
+				let user = {};
+
+				for (let i = 0; i < users.length; i++) {
+					if (users[i].username === username && users[i].password === password) {
+						user = users[i];
+						break;
+					}
+				}
+
+				if (Object.keys(user).length) {
+					$('#modal-text').text('You have successfully signed in.')
+
+					Cookies.set('role', user.role);
+				} else {
+					$('#modal-text').text('Wrong username or password. Please try again.')
+				}
+
+				$('#modal').modal('toggle');
+			})
+		})
 	</script>
 </body>
 
