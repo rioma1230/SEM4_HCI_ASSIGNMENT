@@ -1,0 +1,26 @@
+[
+	{
+		"city": "1",
+		"area": "2",
+		"address": "3",
+		"restaurant": 1
+	},
+	{
+		"city": "4",
+		"area": "5",
+		"address": "6",
+		"restaurant": 1
+	},
+	{
+		"city": "7",
+		"area": "8",
+		"address": "9",
+		"restaurant": 2
+	},
+	{
+		"city": "10",
+		"area": "11",
+		"address": "12",
+		"restaurant": 1
+	}
+]

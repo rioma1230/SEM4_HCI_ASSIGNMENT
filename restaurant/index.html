@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+</head>
+<body>
+	<header></header>
+
+	<div class="container-fluid d-flex vh-100 p-0">
+		<div class="row m-auto h-100">
+			<div class="col-6 col-lg-4 d-none d-sm-block p-0">
+				<img src="https://images.pexels.com/photos/5929/food-salad-dinner-eating.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="vh-100 img-fluid" alt="">
+			</div>
+			<div class="col m-0 mt-5 pt-5 px-5 text-left">
+				<h1 class="display-1">Search Restaurant</h1>
+				
+				<p>
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, saepe? Sed doloremque, natus incidunt, cupiditate voluptas ipsum distinctio est tenetur, modi quibusdam sapiente. Quibusdam unde nam mollitia eveniet nemo explicabo!
+				</p>
+
+				<hr>
+
+				<div class="form-group">
+				  <label for="search">Search</label>
+				  <input type="text" class="form-control" name="search" id="search" aria-describedby="helpId" placeholder="Labore Lorem ea laboris excepteur mollit nisi esse deserunt in.">
+				  <small id="helpId" class="form-text text-muted">Enim laboris commodo velit duis aute ullamco consequat.</small>
+				</div>
+
+				<button id="search-btn" type="button" class="btn btn-outline-primary my-3 p-3 px-5">Search</button>
+
+				<hr>
+
+				<table class="table text-center table-hover">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Cuisine</th>
+							<th>Likes</th>
+							<th>Favourites</th>
+						</tr>
+					</thead>
+					<tbody id="table-body">
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<script src="/js/default.js"></script>
+	<script src="/js/restaurant/index.js"></script>
+</body>
+</html>

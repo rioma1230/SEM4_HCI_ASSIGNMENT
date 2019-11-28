@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+</head>
+<body>
+	<header></header>
+
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col py-5">
+				<h1 class="display-1">Menus</h1>
+
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. At tempora nam mollitia maxime doloribus dolore aut beatae culpa libero ea optio laborum, in itaque dolorem! Laboriosam, aut impedit! Eos, veniam.
+				</p>
+
+				<table id="menu-table" class="table text-center table-hover">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Enable</th>
+							<th>Special</th>
+							<th>Start</th>
+							<th>End</th>
+							<th>Dish name</th>
+							<th>Dish price</th>
+						</tr>
+					</thead>
+					<tbody id="menu-table-body"></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="menu-image-modal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Menu Image</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+				</div>
+				<div class="modal-body">
+					<img id="menu-image" class="w-100 h-100">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="/js/default.js"></script>
+	<script src="/js/menu/show.js"></script>
+</body>
+</html>

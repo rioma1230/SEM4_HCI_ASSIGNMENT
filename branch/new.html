@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<header></header>
+
+	<div class="container-fluid vh-100 d-flex p-0">
+		<div class="row m-auto h-100">
+			<div class="col-6 col-lg-4 d-none d-sm-block p-0">
+				<img src="https://images.pexels.com/photos/5929/food-salad-dinner-eating.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="h-100 img-fluid" alt="">
+			</div>
+			<div class="col mt-5 p-5">
+				<h1 class="display-1">Add Branch</h1>
+
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quibusdam quia repellat, omnis aut, id debitis pariatur, sequi nobis quo alias reprehenderit officiis neque amet esse rem explicabo ea blanditiis!
+				</p>
+
+				<hr>
+
+				<form id="form" action="#">
+					<div class="form-group">
+						<label for="city">City</label>
+						<select class="form-control" name="city" id="city" required autofocus>
+						</select>
+						<small>Incididunt sint mollit minim laborum excepteur cillum ipsum nostrud aute non fugiat non ea proident.</small>
+					</div>
+
+					<div class="form-group">
+						<label for="area">Area</label>
+						<select class="form-control" name="area" id="area" required>
+						</select>
+						<small>Culpa voluptate proident nisi pariatur laborum ea enim.</small>
+					</div>
+
+					<div class="form-group">
+						<label for="address">Address</label>
+						<textarea class="form-control" name="address" id="address" rows="3" required></textarea>
+						<small>Excepteur ea aliqua et aute minim minim laboris nulla incididunt amet occaecat elit.</small>
+					</div>
+
+					<button type="submit" class="btn btn-outline-primary p-3 px-5">Submit</button>
+
+					<button type="reset" class="btn btn-outline-danger p-3 px-5 ml-3">Reset</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script src="/js/default.js"></script>
+	<script src="/js/branch/new.js"></script>
+</body>
+
+</html>

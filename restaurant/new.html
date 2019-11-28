@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<header></header>
+
+	<div class="container-fluid d-flex vh-100 p-0">
+		<div class="row m-auto h-100">
+			<div class="col-sm-6 col-lg-4 d-none d-sm-block p-0">
+				<img src="https://images.pexels.com/photos/2923591/pexels-photo-2923591.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-fluid h-100" alt="">
+			</div>
+			<div class="col pt-5 mt-5 px-5">
+				<h1 class="display-1">Create Restaurant</h1>
+
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, amet. Magni, delectus doloremque molestiae facilis et pariatur velit. Nam est quasi et voluptatum ipsam soluta consequatur eveniet minus accusamus unde.
+				</p>
+
+				<hr>
+
+				<form id="form" action="#">
+					<div class="form-group">
+						<label for="name">Restaurant Name</label>
+						<input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="Irure velit esse dolor eu culpa nulla." required>
+						<small id="helpId" class="form-text text-muted">Lorem elit sit consectetur veniam eiusmod proident Lorem laborum reprehenderit non fugiat tempor aliquip labore.</small>
+					</div>
+
+					<div class="form-group">
+						<label for="cuisine">Cuisine</label>
+						<select class="form-control" name="cuisine" id="cuisine" required>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="image">Restaurant Image</label>
+						<input type="file" class="form-control-file" name="image" id="image" placeholder="Ullamco nulla dolore exercitation sunt adipisicing consectetur cupidatat est aliquip est consectetur." aria-describedby="fileHelpId" required>
+						<small id="fileHelpId" class="form-text text-muted">Sint enim pariatur incididunt id dolore.</small>
+					</div>
+
+					<button type="submit" class="btn btn-outline-primary p-3 px-5">Submit</button>
+
+					<button type="reset" class="btn btn-outline-danger p-3 px-5 ml-3">Reset</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script src="/js/default.js"></script>
+	<script src="/js/restaurant/new.js"></script>
+</body>
+
+</html>
