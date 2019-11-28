@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+</head>
+<body>
+	<header></header>
+
+	<div class="container-fluid d-flex vh-100 p-0">
+		<div class="row m-auto h-100">
+			<div class="col-sm-6 col-lg-4 d-none d-sm-block p-0">
+				<img src="https://images.pexels.com/photos/3178798/pexels-photo-3178798.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-fluid h-100" alt="">
+			</div>
+			<div class="col mt-5 p-5">
+				<h1 class="display-1">View Users</h1>
+
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi eius eos corporis enim at laboriosam ex dicta omnis nemo est, voluptatibus labore, placeat, deserunt accusantium hic eaque laudantium cupiditate dolor.
+				</p>
+
+				<hr>
+
+				<div class="form-group">
+				  <label for="search">Search</label>
+				  <input type="text" class="form-control" name="search" id="search" aria-describedby="helpId" placeholder="Est cillum mollit veniam aliqua laboris exercitation ea non nisi quis ex sint minim incididunt.">
+				  <small id="helpId" class="form-text text-muted">Amet sunt magna voluptate veniam pariatur.</small>
+				</div>
+
+				<button id="search-btn" type="button" class="btn btn-outline-primary p-3 px-5 my-3">Search</button>
+
+				<hr>
+
+				<table class="table table-hover text-center">
+					<thead>
+						<th>Username</th>
+						<th>Nickname</th>
+						<th>Role</th>
+					</thead>
+					<tbody id="table-body"></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Dialog</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+					  <label for="role">Role</label>
+					  <select class="form-control" name="role" id="role">
+						<option>Admin</option>
+						<option>Operator</option>
+						<option>Normal user</option>
+					  </select>
+					  <small>Elit ullamco aute pariatur excepteur excepteur id qui.</small>
+					</div>
+
+					<button type="button" class="btn btn-outline-primary p-3 px-5" data-dismiss="modal" onclick="$($('#user-'+selectedUser).children()[2]).text($('#role').val())">Save changes</button>
+
+					<button type="button" class="btn btn-outline-danger p-3 px-5 ml-3" data-dismiss="modal" onclick="$('#user-'+selectedUser).remove()">Remove user</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$('header').load('/navbar.html')
+
+		function roleAbbreviationToFull(abbreviation) {
+			switch (abbreviation) {
+				case 'a': return 'Admin';
+				case 'o': return 'Operator';
+				case 'n': return 'Normal user';
+			}
+		}
+
+		var selectedUser = -1;
+
+		$.getJSON('/json/users.json', function(users) {
+			$.each(users, function (index, element) {
+				$('#table-body').append(`
+					<tr id="user-${index}" onclick="selectedUser = ${index}" style="cursor: pointer" data-toggle="modal" data-target="#modal">
+						<td>${element.username}</td>
+						<td>${element.name}</td>
+						<td>${roleAbbreviationToFull(element.role)}</td>
+					</tr>
+				`)
+			})
+
+			$('#search-btn').click(function() {
+				$('#table-body').empty()
+
+				$.each(users, function(index, element) {
+					var text = $('#search').val();
+
+					if (element.name.includes(text) || element.username.includes(text) || element.role.includes(text)){
+						$('#table-body').append(`
+							<tr id="user-${index}" onclick="selectedUser = ${index}" style="cursor: pointer" data-toggle="modal" data-target="#modal">
+								<td>${element.username}</td>
+								<td>${element.name}</td>
+								<td>${roleAbbreviationToFull(element.role)}</td>
+							</tr>
+						`)
+					}
+				})
+			})
+		})
+	</script>
+</body>
+</html>
