@@ -109,21 +109,8 @@
 		</div>
 	</div>
 
-	<script>
-		$('header').load('/navbar.html');
-
-		$('#form').submit(function (e) {
-			e.preventDefault()
-
-			if ($('#password').val() === $('#confirm').val()) {
-				$('#modal-content').text('You have successfully created an account.')
-			} else {
-				$('#modal-content').text('The password and confirm password doesn\'t match.')
-			}
-
-			$('#modal').modal('toggle')
-		})
-	</script>
+	<script src="/js/default.js"></script>
+	<script src="/js/user/signup.js"></script>
 </body>
 
 </html>

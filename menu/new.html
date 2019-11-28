@@ -110,20 +110,8 @@
 		</div>
 	</div>
 
-	<script>
-		$('header').load('/navbar.html');
-
-		$('#form').submit(function (e) {
-			e.preventDefault()
-
-			$('#table-body').append(`
-				<tr>
-					<td>${$('#name').val()}</td>
-					<td>$ ${parseInt($('#price').val()).toFixed(1)}</td>
-				</tr>
-			`)
-		})
-	</script>
+	<script src="/js/default.js"></script>
+	<script src="/js/menu/new.js"></script>
 </body>
 
 </html>

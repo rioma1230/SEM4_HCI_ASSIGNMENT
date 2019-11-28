@@ -72,24 +72,8 @@
 		</div>
 	</div>
 
-	<script type="module" src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.mjs"></script>
-	<script type="module">
-		import Cookies from 'https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.mjs';
-
-		function roleAbbreviationToFull(abbreviation) {
-			switch (abbreviation) {
-				case 'a': return 'Admin';
-				case 'o': return 'Operator';
-				case 'n': return 'Normal user';
-			}
-		}
-
-		$('header').load('/navbar.html')
-
-		$('#name').text(Cookies.get('name'))
-		$('#username').text('#' + Cookies.get('username'))
-		$('#role').text(roleAbbreviationToFull(Cookies.get('role')))
-	</script>
+	<script src="/js/default.js"></script>
+	<script type="module" src="/js/user/profile.js"></script>
 </body>
 
 </html>
