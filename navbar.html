@@ -6,7 +6,7 @@
 	</button>
 	<div class="collapse navbar-collapse" id="collapsibleNavId">
 		<ul id="navbar-item-list" class="navbar-nav mr-auto mt-2 mt-lg-0">
-			<li id="navbar-item-restaurant" class="nav-item active">
+			<li id="navbar-item-restaurant" class="nav-item">
 				<a class="nav-link" href="/restaurant/">Restaurant</a>
 			</li>
 			<li class="nav-item">
@@ -53,7 +53,7 @@
 		switch (Cookies.get('role')) {
 			case "a":
 				$('#navbar-item-list').prepend(`
-					<li class="nav-item active">
+					<li class="nav-item">
 						<a class="nav-link" href="/user/">User</a>
 					</li>
 				`);
