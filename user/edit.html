@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+</head>
+<body>
+	<header></header>
+
+	<div class="container mt-5 pt-5">
+		<div class="row">
+			<div class="col">
+				<h1 class="display-1">Edit profile</h1>
+
+				<p>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita modi perspiciatis alias esse, consequatur quisquam commodi delectus laudantium consectetur fuga nemo fugiat atque illum officiis explicabo nam harum, deserunt pariatur!
+				</p>
+
+				<hr>
+
+				<form id="form" action="#">
+					<div class="form-group">
+					  <label for="old">Old password</label>
+					  <input type="password" class="form-control" name="old" id="old" aria-describedby="helpId" placeholder="Nisi veniam ullamco sint voluptate sunt." autofocus required>
+					  <small id="helpId" class="form-text text-muted">Ut esse ut nisi cupidatat non exercitation dolor elit commodo est magna.</small>
+					</div>
+
+					<div class="form-group">
+					  <label for="new">New password</label>
+					  <input type="password" class="form-control" name="new" id="new" aria-describedby="helpId" placeholder="Sint fugiat amet magna minim ut do sint proident magna aliquip id." required minlength="6">
+					  <small id="helpId" class="form-text text-muted">Non ipsum et et irure ex cillum nisi occaecat id voluptate incididunt.</small>
+					</div>
+
+					<div class="form-group">
+					  <label for="confirm">Confirm password</label>
+					  <input type="password" class="form-control" name="confirm" id="confirm" aria-describedby="helpId" placeholder="Deserunt dolor pariatur aliqua ea." required minlength="8">
+					  <small id="helpId" class="form-text text-muted">Occaecat id velit Lorem duis do incididunt voluptate tempor anim mollit magna id.</small>
+					</div>
+
+					<p>
+						<span id="num1"></span> + <span id="num2"></span> = ?
+					</p>
+
+					<div class="form-group">
+					  <label for="verification">Verification</label>
+					  <input type="text" class="form-control" name="verification" id="verification" aria-describedby="helpId" placeholder="Cupidatat qui elit eiusmod adipisicing eu enim." required>
+					  <small id="helpId" class="form-text text-muted">Dolor duis consectetur eiusmod culpa voluptate exercitation aliquip amet cillum officia ex labore aliqua.</small>
+					</div>
+					
+					<button type="submit" class="btn btn-outline-primary p-3 px-5">Submit</button>
+
+					<button type="reset" class="btn btn-outline-danger p-3 px-5 ml-3">Reset</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script type="module" src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.mjs"></script>
+	<script type="module">
+		import Cookies from 'https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.mjs';
+
+		$('header').load('/navbar.html')
+
+		var num1 = Math.round(Math.random() * 10), num2 = Math.round(Math.random() * 10);
+		var result = num1 + num2;
+
+		$('#num1').text(num1);
+		$('#num2').text(num2);
+
+		$('#form').submit(function(e) {
+			e.preventDefault()
+
+			if ($('#old').val() != Cookies.get('password')) {
+				window.alert('Wrong old password.')
+			} else if ($('#new').val() != $('#confirm').val()) {
+				window.alert('New password and confirm password is not matched.')
+			} else if ($('#verification').val() != result) {
+				window.alert('Invalid verification.')
+			} else {
+				window.alert('Password changed.')
+
+				window.location.assign('./profile.html')
+			}
+		})
+	</script>
+</body>
+</html>
